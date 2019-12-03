@@ -1,6 +1,7 @@
 package com.github.romankh3.tacocloud.controller;
 
 import com.github.romankh3.tacocloud.Order;
+import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,7 @@ public class OrderController {
     }
 
     @PostMapping
-    public String processOrder(Order order, Errors errors) {
+    public String processOrder(@Valid Order order, Errors errors) {
         if (errors.hasErrors()) {
             return "orderForm";
         }

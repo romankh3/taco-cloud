@@ -2,8 +2,10 @@ package com.github.romankh3.tacocloud.controller;
 
 import com.github.romankh3.tacocloud.Ingredient;
 import com.github.romankh3.tacocloud.Ingredient.Type;
+import com.github.romankh3.tacocloud.Order;
 import com.github.romankh3.tacocloud.Taco;
 import com.github.romankh3.tacocloud.repository.IngredientRepository;
+import com.github.romankh3.tacocloud.repository.TacoRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -29,13 +32,14 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 public class DesignTacoController {
 
     public static final String DESIGN_VIEW_NAME = "design";
-    public static final String ORDER_CURRENT_VIEW_NAME = "/order/current";
 
     private final IngredientRepository ingredientRepository;
+    private final TacoRepository tacoRepository;
 
     @Autowired
-    public DesignTacoController(IngredientRepository ingredientRepository) {
+    public DesignTacoController(IngredientRepository ingredientRepository, TacoRepository tacoRepository) {
         this.ingredientRepository = ingredientRepository;
+        this.tacoRepository = tacoRepository;
     }
 
     @GetMapping
@@ -56,13 +60,14 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processDesign(@Valid Taco design, Errors errors) {
+    public String processDesign(@Valid Taco design, Errors errors, @ModelAttribute Order order) {
         if (errors.hasErrors()) {
             return DESIGN_VIEW_NAME;
         }
 
-        // Save the taco design...
-        // We'll do this in chapter 3
+        Taco saved = tacoRepository.save(design);
+        order.addDesign(saved);
+
         log.info("Processing design: " + design);
         //go to http get request to this path.
         return "redirect:/orders/current";
