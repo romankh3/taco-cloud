@@ -1,4 +1,4 @@
-package com.github.romankh3.tacocloud.controller;
+package com.github.romankh3.tacocloud.web;
 
 import com.github.romankh3.tacocloud.Ingredient;
 import com.github.romankh3.tacocloud.Ingredient.Type;
@@ -46,7 +46,7 @@ public class DesignTacoController {
         return new Order();
     }
 
-    @ModelAttribute(name = "taco")
+    @ModelAttribute(name = "design")
     public Taco taco() {
         return new Taco();
     }

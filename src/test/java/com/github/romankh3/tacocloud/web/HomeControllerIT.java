@@ -1,4 +1,4 @@
-package com.github.romankh3.tacocloud.controller;
+package com.github.romankh3.tacocloud.web;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

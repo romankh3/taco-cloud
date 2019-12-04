@@ -1,4 +1,4 @@
-package com.github.romankh3.tacocloud.controller;
+package com.github.romankh3.tacocloud.web;
 
 import com.github.romankh3.tacocloud.Order;
 import com.github.romankh3.tacocloud.repository.jpa.OrderRepositoryJpa;
@@ -11,14 +11,14 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 @Slf4j
 @Controller
 @RequestMapping("/orders")
+@SessionAttributes("order")
 public class OrderController {
-
-    public static final String ORDER_FORM_VIEW_NAME = "orderForm";
 
     private final OrderRepositoryJpa orderRepository;
 
@@ -28,9 +28,8 @@ public class OrderController {
     }
 
     @GetMapping("/current")
-    public String orderForm(Model model) {
-        model.addAttribute("order", new Order());
-        return ORDER_FORM_VIEW_NAME;
+    public String orderForm() {
+        return "orderForm";
     }
 
     @PostMapping
