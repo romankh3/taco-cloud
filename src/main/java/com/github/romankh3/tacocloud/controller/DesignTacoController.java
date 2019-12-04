@@ -7,7 +7,6 @@ import com.github.romankh3.tacocloud.Taco;
 import com.github.romankh3.tacocloud.repository.IngredientRepository;
 import com.github.romankh3.tacocloud.repository.TacoRepository;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.validation.Valid;
@@ -40,6 +39,16 @@ public class DesignTacoController {
     public DesignTacoController(IngredientRepository ingredientRepository, TacoRepository tacoRepository) {
         this.ingredientRepository = ingredientRepository;
         this.tacoRepository = tacoRepository;
+    }
+
+    @ModelAttribute(name = "order")
+    public Order order() {
+        return new Order();
+    }
+
+    @ModelAttribute(name = "taco")
+    public Taco taco() {
+        return new Taco();
     }
 
     @GetMapping
