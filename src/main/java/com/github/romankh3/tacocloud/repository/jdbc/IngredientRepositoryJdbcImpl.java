@@ -1,4 +1,4 @@
-package com.github.romankh3.tacocloud.repository;
+package com.github.romankh3.tacocloud.repository.jdbc;
 
 import com.github.romankh3.tacocloud.Ingredient;
 import java.sql.ResultSet;
@@ -8,13 +8,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class JdbcIngredientRepository implements IngredientRepository {
+public class IngredientRepositoryJdbcImpl implements IngredientRepositoryJdbc {
 
     private final JdbcTemplate jdbc;
 
 
     @Autowired
-    public JdbcIngredientRepository(JdbcTemplate jdbc) {
+    public IngredientRepositoryJdbcImpl(JdbcTemplate jdbc) {
         this.jdbc = jdbc;
     }
 

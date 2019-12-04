@@ -4,8 +4,8 @@ import com.github.romankh3.tacocloud.Ingredient;
 import com.github.romankh3.tacocloud.Ingredient.Type;
 import com.github.romankh3.tacocloud.Order;
 import com.github.romankh3.tacocloud.Taco;
-import com.github.romankh3.tacocloud.repository.IngredientRepository;
-import com.github.romankh3.tacocloud.repository.TacoRepository;
+import com.github.romankh3.tacocloud.repository.jpa.IngredientRepositoryJpa;
+import com.github.romankh3.tacocloud.repository.jpa.TacoRepositoryJpa;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,11 +32,11 @@ public class DesignTacoController {
 
     public static final String DESIGN_VIEW_NAME = "design";
 
-    private final IngredientRepository ingredientRepository;
-    private final TacoRepository tacoRepository;
+    private final IngredientRepositoryJpa ingredientRepository;
+    private final TacoRepositoryJpa tacoRepository;
 
     @Autowired
-    public DesignTacoController(IngredientRepository ingredientRepository, TacoRepository tacoRepository) {
+    public DesignTacoController(IngredientRepositoryJpa ingredientRepository, TacoRepositoryJpa tacoRepository) {
         this.ingredientRepository = ingredientRepository;
         this.tacoRepository = tacoRepository;
     }

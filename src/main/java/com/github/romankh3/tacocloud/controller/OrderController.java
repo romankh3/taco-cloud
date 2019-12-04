@@ -1,7 +1,7 @@
 package com.github.romankh3.tacocloud.controller;
 
 import com.github.romankh3.tacocloud.Order;
-import com.github.romankh3.tacocloud.repository.OrderRepository;
+import com.github.romankh3.tacocloud.repository.jpa.OrderRepositoryJpa;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +20,10 @@ public class OrderController {
 
     public static final String ORDER_FORM_VIEW_NAME = "orderForm";
 
-    private final OrderRepository orderRepository;
+    private final OrderRepositoryJpa orderRepository;
 
     @Autowired
-    public OrderController(OrderRepository orderRepository) {
+    public OrderController(OrderRepositoryJpa orderRepository) {
         this.orderRepository = orderRepository;
     }
 

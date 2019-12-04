@@ -1,11 +1,11 @@
-package com.github.romankh3.tacocloud.repository;
+package com.github.romankh3.tacocloud.repository.jdbc;
 
 import com.github.romankh3.tacocloud.Ingredient;
 import com.github.romankh3.tacocloud.Taco;
 import java.sql.Timestamp;
 import java.sql.Types;
-import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -18,13 +18,13 @@ import org.springframework.stereotype.Repository;
  * {@inheritDoc}
  */
 @Repository
-public class JdbcTacoRepository implements TacoRepository {
+public class TacoRepositoryJdbcImpl implements TacoRepositoryJdbc {
 
 
     private final JdbcTemplate jdbc;
 
     @Autowired
-    public JdbcTacoRepository(JdbcTemplate jdbc) {
+    public TacoRepositoryJdbcImpl(JdbcTemplate jdbc) {
         this.jdbc = jdbc;
     }
 
@@ -43,7 +43,7 @@ public class JdbcTacoRepository implements TacoRepository {
     }
 
     private long saveTacoInfo(Taco taco) {
-        taco.setCreatedAt(LocalDate.now());
+        taco.setCreatedAt(new Date());
         PreparedStatementCreator psc =
                 new PreparedStatementCreatorFactory(
                         "insert into Taco (name, createdAt) values (?, ?)",
@@ -51,7 +51,7 @@ public class JdbcTacoRepository implements TacoRepository {
                 ).newPreparedStatementCreator(
                         Arrays.asList(
                                 taco.getName(),
-                                new Timestamp(taco.getCreatedAt().toEpochDay())));
+                                new Timestamp(taco.getCreatedAt().getTime())));
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbc.update(psc, keyHolder);
         return keyHolder.getKey().longValue();

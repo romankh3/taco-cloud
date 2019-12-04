@@ -1,11 +1,11 @@
-package com.github.romankh3.tacocloud.repository;
+package com.github.romankh3.tacocloud.repository.jdbc;
 
 import com.github.romankh3.tacocloud.Taco;
 
 /**
  * Repository for {@link Taco} object.
  */
-public interface TacoRepository {
+public interface TacoRepositoryJdbc {
 
     Taco save(Taco design);
 }
