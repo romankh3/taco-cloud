@@ -1,6 +1,6 @@
 package com.github.romankh3.tacocloud.repository.jdbc;
 
-import com.github.romankh3.tacocloud.Ingredient;
+import com.github.romankh3.tacocloud.model.Ingredient;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.github.romankh3.tacocloud.repository.jdbc;
 
-import com.github.romankh3.tacocloud.Ingredient;
-import com.github.romankh3.tacocloud.Taco;
+import com.github.romankh3.tacocloud.model.Ingredient;
+import com.github.romankh3.tacocloud.model.Taco;
 import java.sql.Timestamp;
 import java.sql.Types;
 import java.util.Arrays;

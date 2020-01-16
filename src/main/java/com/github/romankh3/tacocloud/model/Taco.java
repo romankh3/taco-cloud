@@ -1,4 +1,4 @@
-package com.github.romankh3.tacocloud;
+package com.github.romankh3.tacocloud.model;
 
 import java.util.ArrayList;
 import java.util.Date;

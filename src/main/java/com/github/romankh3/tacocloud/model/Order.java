@@ -1,4 +1,4 @@
-package com.github.romankh3.tacocloud;
+package com.github.romankh3.tacocloud.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

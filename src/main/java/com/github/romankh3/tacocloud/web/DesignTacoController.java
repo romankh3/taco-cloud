@@ -1,9 +1,9 @@
 package com.github.romankh3.tacocloud.web;
 
-import com.github.romankh3.tacocloud.Ingredient;
-import com.github.romankh3.tacocloud.Ingredient.Type;
-import com.github.romankh3.tacocloud.Order;
-import com.github.romankh3.tacocloud.Taco;
+import com.github.romankh3.tacocloud.model.Ingredient;
+import com.github.romankh3.tacocloud.model.Ingredient.Type;
+import com.github.romankh3.tacocloud.model.Order;
+import com.github.romankh3.tacocloud.model.Taco;
 import com.github.romankh3.tacocloud.repository.jpa.IngredientRepositoryJpa;
 import com.github.romankh3.tacocloud.repository.jpa.TacoRepositoryJpa;
 import java.util.ArrayList;

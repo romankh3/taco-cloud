@@ -1,6 +1,7 @@
 package com.github.romankh3.tacocloud;
 
-import com.github.romankh3.tacocloud.Ingredient.Type;
+import com.github.romankh3.tacocloud.model.Ingredient;
+import com.github.romankh3.tacocloud.model.Ingredient.Type;
 import com.github.romankh3.tacocloud.repository.jpa.IngredientRepositoryJpa;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

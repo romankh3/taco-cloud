@@ -1,6 +1,6 @@
 package com.github.romankh3.tacocloud.web;
 
-import com.github.romankh3.tacocloud.Ingredient;
+import com.github.romankh3.tacocloud.model.Ingredient;
 import com.github.romankh3.tacocloud.repository.jpa.IngredientRepositoryJpa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;

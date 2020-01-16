@@ -1,12 +1,11 @@
 package com.github.romankh3.tacocloud.web;
 
-import com.github.romankh3.tacocloud.Order;
+import com.github.romankh3.tacocloud.model.Order;
 import com.github.romankh3.tacocloud.repository.jpa.OrderRepositoryJpa;
 import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

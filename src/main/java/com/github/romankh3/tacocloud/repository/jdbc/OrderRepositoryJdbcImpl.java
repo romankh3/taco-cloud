@@ -1,7 +1,7 @@
 package com.github.romankh3.tacocloud.repository.jdbc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.romankh3.tacocloud.Order;
+import com.github.romankh3.tacocloud.model.Order;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
